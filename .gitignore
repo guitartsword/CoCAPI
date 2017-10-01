@@ -10,6 +10,9 @@ auth.json
 # C extensions
 *.so
 
+# SQL bak
+*.bak
+
 # Distribution / packaging
 .Python
 env/
