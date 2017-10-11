@@ -3,7 +3,8 @@ CREATE PROCEDURE `th_set_level` (
     lvl TINYINT UNSIGNED
 )
 BEGIN
-	IF lvl<1 OR lvl > valid_lvl.max_level THEN
+	SET @max_level = (SELECT max_level from TownHall where townhall_id = 'validth1');
+	IF lvl<1 OR lvl > @max_level THEN
 		SIGNAL SQLSTATE '45000' 
 			SET MESSAGE_TEXT = 'INVALID townhall level';
 	END IF;

@@ -4,13 +4,13 @@ CREATE PROCEDURE `th_add` (
     lvl TINYINT UNSIGNED
 )
 BEGIN
-	set @valid_lvl = (SELECT max_level from TownHall where townhall_id = 'validth1');
+	set @max_level = (SELECT max_level from TownHall where townhall_id = 'validth1');
     
-	IF lvl<1 OR lvl > @valid_lvl THEN
+	IF lvl<1 OR lvl > @max_level THEN
 		SIGNAL SQLSTATE '45000' 
 			SET MESSAGE_TEXT = 'INVALID townhall level';
 	END IF;
-	INSERT INTO TownHall VALUES (th_id,username,lvl)
+	INSERT INTO TownHall(townhall_id, username, level) VALUES (th_id,username,lvl)
     ON DUPLICATE KEY UPDATE
     username = username,
     level = lvl;
