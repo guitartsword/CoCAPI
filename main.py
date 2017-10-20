@@ -3,14 +3,14 @@ from flask import Flask
 from flask_restful import Api
 from api.player import Player
 from api.clan import Clan
-
+from settings import ENV
 APP = Flask(__name__)
 API = Api(APP)
 
 @APP.route('/')
 def root():
-    """Returns hola perro."""
-    return 'Welcome'
+    """Returns welcome."""
+    return 'Welcome to environment %s' % ENV
 
 API.add_resource(
     Player,

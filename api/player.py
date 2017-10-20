@@ -4,9 +4,9 @@ import urllib
 import requests
 from flask_restful import Resource, reqparse
 from flask import Response
+from settings import SETTINGS
 
-with open('auth.json') as auth:
-    KEY = 'Bearer ' + json.load(auth)['key']
+KEY = 'Bearer ' + SETTINGS['clash_key']
 
 class Player(Resource):
     """Clash Of Clans Player API."""
