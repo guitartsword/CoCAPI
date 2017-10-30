@@ -1,5 +1,5 @@
 usage(){
-    echo "usage: sh server.sh [-e environment]"
+    echo "usage: sh server.sh [-e environment --ini file]"
 }
 
 # SET environmental variable

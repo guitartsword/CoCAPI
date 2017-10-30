@@ -25,3 +25,5 @@ class Player(Resource):
         return Response(response=response.text,
                         status=200,
                         mimetype="application/json")
+    def post(self):
+        return "saved to mysql"
