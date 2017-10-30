@@ -35,5 +35,10 @@ fi
 export ENV
 . venv/bin/activate
 
+# Install requirements
+echo "Installing proyect requirements"
+pip install -r requirements.txt
+
 # Run server
+echo "Running server..."
 uwsgi --ini "$file"
