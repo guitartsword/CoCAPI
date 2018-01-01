@@ -4,7 +4,7 @@ CREATE PROCEDURE `th_add` (
     lvl TINYINT UNSIGNED
 )
 BEGIN
-	set @max_level = (SELECT max_level from TownHall where townhall_id = 'validth1');
+	SET @max_level = (SELECT MAX(level) FROM TownHall WHERE townhall_id LIKE 'validth%');
     
 	IF lvl<1 OR lvl > @max_level THEN
 		SIGNAL SQLSTATE '45000' 
