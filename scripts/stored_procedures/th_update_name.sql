@@ -3,7 +3,7 @@ CREATE PROCEDURE `th_update_name` (
     username VARCHAR(16)
 )
 BEGIN
-    UPDATE TownHall
+    UPDATE townhall
     SET username = username
     WHERE townhall_id = th_id;
 END

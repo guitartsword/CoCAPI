@@ -1,4 +1,4 @@
-CREATE VIEW `new_view` AS
+CREATE VIEW `valid_buildings` AS
 SELECT
     th.level AS 'th_level',
     b.building_id, b.name,

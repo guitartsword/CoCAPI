@@ -1,15 +1,15 @@
 # Valid Townhalls
-INSERT INTO TownHall VALUES('validth1','validth1',1,11);
-INSERT INTO TownHall(townhall_id, username, level) VALUES('validth2','validth2',2);
-INSERT INTO TownHall(townhall_id, username, level) VALUES('validth3','validth3',3);
-INSERT INTO TownHall(townhall_id, username, level) VALUES('validth4','validth4',4);
-INSERT INTO TownHall(townhall_id, username, level) VALUES('validth5','validth5',5);
-INSERT INTO TownHall(townhall_id, username, level) VALUES('validth6','validth6',6);
-INSERT INTO TownHall(townhall_id, username, level) VALUES('validth7','validth7',7);
-INSERT INTO TownHall(townhall_id, username, level) VALUES('validth8','validth8',8);
-INSERT INTO TownHall(townhall_id, username, level) VALUES('validth9','validth9',9);
-INSERT INTO TownHall(townhall_id, username, level) VALUES('validth10','validth10',10);
-INSERT INTO TownHall(townhall_id, username, level) VALUES('validth11','validth11',11);
+INSERT INTO townhall VALUES('validth1','validth1',1,11);
+INSERT INTO townhall(townhall_id, username, level) VALUES('validth2','validth2',2);
+INSERT INTO townhall(townhall_id, username, level) VALUES('validth3','validth3',3);
+INSERT INTO townhall(townhall_id, username, level) VALUES('validth4','validth4',4);
+INSERT INTO townhall(townhall_id, username, level) VALUES('validth5','validth5',5);
+INSERT INTO townhall(townhall_id, username, level) VALUES('validth6','validth6',6);
+INSERT INTO townhall(townhall_id, username, level) VALUES('validth7','validth7',7);
+INSERT INTO townhall(townhall_id, username, level) VALUES('validth8','validth8',8);
+INSERT INTO townhall(townhall_id, username, level) VALUES('validth9','validth9',9);
+INSERT INTO townhall(townhall_id, username, level) VALUES('validth10','validth10',10);
+INSERT INTO townhall(townhall_id, username, level) VALUES('validth11','validth11',11);
 
 #Base buildings
 INSERT INTO building VALUES('cannon', 'Cannon', 0, 0);
