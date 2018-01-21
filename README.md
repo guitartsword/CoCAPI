@@ -16,3 +16,9 @@ Create a .json with the following format:
     }
 }
 ```
+# Installing and running
+1. `virtualenv venv`
+2. For linux & OS X users: `source venv/bin/activate`. For windows users: `.\venv\Scripts\activate`
+3. Install all the requirements: `pip install -r requirements.txt`
+4. Linux & OS X: `sh server.sh`. Windows: `python main.py`
+5. Now open the browser and write the following url: `localhost:8080`
