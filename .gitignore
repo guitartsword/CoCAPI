@@ -109,3 +109,6 @@ ENV/
 
 #vscode
 .vscode/
+
+# Enviromental Config
+config_*.json

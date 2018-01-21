@@ -2,18 +2,22 @@
 from flask import Flask
 from flask_cors import CORS
 from flask_restful import Api
+from flaskext.mysql import MySQL
 from api.player import Player
 from api.clan import Clan
-from settings import ENV
+from api.building import Building
+from settings import ENV, SETTINGS
 
 APP = Flask(__name__)
+APP.config.update(SETTINGS['mysql'])
 CORS(APP)
+MYSQL = MySQL(APP)
 API = Api(APP)
 
 @APP.route('/')
 def root():
-    """Returns welcome."""
-    return 'Welcome to environment %s' % ENV
+    """ Returns welcome. """
+    return 'The %s environment is working' % ENV
 
 API.add_resource(
     Player,
@@ -23,6 +27,11 @@ API.add_resource(
 API.add_resource(
     Clan,
     '/clan/<clan_id>',
+)
+API.add_resource(
+    Building,
+    '/building',
+    resource_class_args=(MYSQL.connect(),)
 )
 
 if __name__ == '__main__':
