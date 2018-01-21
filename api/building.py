@@ -14,7 +14,7 @@ class Building(Resource):
         self.parser = reqparse.RequestParser()
         self.parser.add_argument('th_id', type=str, required=True)
         self.parser.add_argument('building_id', type=str, required=True)
-        self.parser.add_argument('level', type=int,required=True)
+        self.parser.add_argument('level', type=int, required=True)
         self.url = "https://api.clashofclans.com/v1/players/"
         self.headers = {
             "authorization": KEY
@@ -33,7 +33,7 @@ class Building(Resource):
             }
         except InternalError as error:
             print error
-            if(error[0] == 1644):
+            if error[0] == 1644:
                 status = 'invalid_sp'
             else:
                 status = 'mysql_error'
@@ -41,4 +41,3 @@ class Building(Resource):
                 'status': status,
                 'message':error[1]
             }
-

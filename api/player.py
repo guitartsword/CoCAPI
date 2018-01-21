@@ -1,5 +1,4 @@
 """Clash Of Clans Player API."""
-import json
 import urllib
 import requests
 from flask_restful import Resource, reqparse
@@ -27,4 +26,4 @@ class Player(Resource):
 
     def post(self, player_id):
         """HTTP POST method."""
-        return "Not available for now"
+        return "Not available for now: %s" % player_id

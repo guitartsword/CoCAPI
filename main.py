@@ -3,6 +3,7 @@ from flask import Flask
 from flask_cors import CORS
 from flask_restful import Api
 from flaskext.mysql import MySQL
+
 from api.player import Player
 from api.clan import Clan
 from api.building import Building

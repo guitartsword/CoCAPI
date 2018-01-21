@@ -1,5 +1,5 @@
-# CoCAPI
-IP: 138.68.228.152
+# CoCAPI IP Adress
+`138.68.228.152`
 
 # Pre-requisites:
 Have python, pip and virtualenv installed
@@ -8,11 +8,11 @@ Create a .json with the following format:
 {
     "clash_key": "your.berear.clashkey",
     "mysql": {
-        "MYSQL_DATABASE_USER":"str",
-        "MYSQL_DATABASE_PASSWORD":"str",
-        "MYSQL_DATABASE_DB":"str",
-        "MYSQL_DATABASE_HOST":"str",
-        "MYSQL_DATABASE_PORT": "int"
+        "MYSQL_DATABASE_USER":"userNameHere",
+        "MYSQL_DATABASE_PASSWORD":"mysupersecurepassword",
+        "MYSQL_DATABASE_DB":"mydb",
+        "MYSQL_DATABASE_HOST":"localhost",
+        "MYSQL_DATABASE_PORT": 3306
     }
 }
 ```
