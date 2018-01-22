@@ -3,16 +3,19 @@
 
 # Pre-requisites:
 Have python, pip and virtualenv installed
-Create a .json with the following format:
+Create a .json with the following format and the mysql 
+can have all the parameters as the [PyMySql Connection Object parameters][pymysql-connection]:
 ```json
 {
     "clash_key": "your.berear.clashkey",
     "mysql": {
-        "MYSQL_DATABASE_USER":"userNameHere",
-        "MYSQL_DATABASE_PASSWORD":"mysupersecurepassword",
-        "MYSQL_DATABASE_DB":"mydb",
-        "MYSQL_DATABASE_HOST":"localhost",
-        "MYSQL_DATABASE_PORT": 3306
+        "user":"userNameHere",
+        "password":"mysupersecurepassword",
+        "database":"mydb",
+        "host":"localhost",
+        "port": 3306,
+        "charset": "utf8",
+        "use_unicode": true
     }
 }
 ```
@@ -22,3 +25,6 @@ Create a .json with the following format:
 3. Install all the requirements: `pip install -r requirements.txt`
 4. Linux & OS X: `sh server.sh`. Windows: `python main.py`
 5. Now open the browser and write the following url: `localhost:8080`
+
+
+    [pymysql-connection]: https://pymysql.readthedocs.io/en/latest/modules/connections.html

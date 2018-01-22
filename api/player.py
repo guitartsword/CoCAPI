@@ -3,7 +3,9 @@ import urllib
 import requests
 from flask_restful import Resource, reqparse
 from flask import Response
+
 from settings import SETTINGS
+from tools.mysql import call_procedure
 KEY = 'Bearer ' + SETTINGS['clash_key']
 
 class Player(Resource):
@@ -11,7 +13,8 @@ class Player(Resource):
     def __init__(self):
         """Contructor."""
         self.parser = reqparse.RequestParser()
-        self.parser.add_argument('offensive_weight', type=bool)
+        self.parser.add_argument('username', type=str)
+        self.parser.add_argument('level', type=int)
         self.url = "https://api.clashofclans.com/v1/players/"
         self.headers = {
             "authorization": KEY
@@ -26,4 +29,9 @@ class Player(Resource):
 
     def post(self, player_id):
         """HTTP POST method."""
-        return "Not available for now: %s" % player_id
+        args = self.parser.parse_args()
+        cur_args = (player_id, args.username, args.level)
+        msg = call_procedure('th_add', cur_args)
+        if msg['status'] == 'ok':
+            msg['message'] = 'townhall information successfully processed'
+        return msg

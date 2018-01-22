@@ -1,4 +1,4 @@
-"""."""
+"""settings for each environment."""
 import os
 import json
 ENV = os.environ.get('ENV')
