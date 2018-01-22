@@ -38,6 +38,7 @@ export ENV
 # Install requirements
 echo "Installing proyect requirements"
 pip install -r requirements.txt
+pip install uwsgi
 
 # Run server
 echo "Running server..."
